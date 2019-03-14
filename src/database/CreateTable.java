@@ -18,7 +18,7 @@ public class CreateTable {
     public static void createNewTable() {
    
         // SQL statement for creating a new table
-        String sql = "CREATE TABLE IF NOT EXISTS warehouses (\n"
+        String sql = "CREATE TABLE IF NOT EXISTS "+olguinha.Olguinha.TABLE+" (\n"
                 + "	id integer PRIMARY KEY,\n"
                 + "	name text NOT NULL,\n"
                 + "	capacity real\n"

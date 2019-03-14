@@ -32,7 +32,7 @@ public class SelectApp {
      * select all rows in the warehouses table
      */
     public void selectAll(){
-        String sql = "SELECT id, name, capacity FROM warehouses";
+        String sql = "SELECT id, name, capacity FROM "+olguinha.Olguinha.TABLE;
         
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
