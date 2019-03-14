@@ -28,9 +28,8 @@ public class FXMLCadastroController implements Initializable {
     @FXML
     private void clicouSalvar(ActionEvent event) {
         InsertDB app = new database.InsertDB();
-        app.insert("Raw Materials", 3000);
-        app.insert("Semifinished Goods", 4000);
-        app.insert("Finished Goods", 5000);
+        app.insert("TEST", "OI2", "ola", "test", "eita", "coisa", "chata", "caceta");
+
         SelectApp app2 = new SelectApp();
         app2.selectAll();
     }

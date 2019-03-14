@@ -19,11 +19,17 @@ public class CreateTable {
    
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS "+olguinha.Olguinha.TABLE+" (\n"
-                + "	id integer PRIMARY KEY,\n"
+                + "	id text PRIMARY KEY,\n"
                 + "	name text NOT NULL,\n"
-                + "	capacity real\n"
+                + "	cpf text NOT NULL UNIQUE,\n"
+                + "	sexo text NOT NULL,\n"
+                + "	tel text NOT NULL,\n"
+                + "	nasc text NOT NULL,\n"
+                + "	telegram text NOT NULL,\n"
+                + "	endereco text NOT NULL,\n"
+                + "	obs text \n"
                 + ");";
-        
+        System.out.println(sql);
         try (Connection conn = DriverManager.getConnection(olguinha.Olguinha.URL);
                 Statement stmt = conn.createStatement()) {
             // create a new table

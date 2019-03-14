@@ -32,7 +32,7 @@ public class SelectApp {
      * select all rows in the warehouses table
      */
     public void selectAll(){
-        String sql = "SELECT id, name, capacity FROM "+olguinha.Olguinha.TABLE;
+        String sql = "SELECT * FROM "+olguinha.Olguinha.TABLE;
         
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
@@ -41,8 +41,14 @@ public class SelectApp {
             // loop through the result set
             while (rs.next()) {
                 System.out.println(rs.getInt("id") +  "\t" + 
-                                   rs.getString("name") + "\t" +
-                                   rs.getDouble("capacity"));
+                                    rs.getString("name") + "\t" +
+                                    rs.getString("cpf") + "\t" +
+                                    rs.getString("sexo") + "\t" +
+                                    rs.getString("tel") + "\t" +
+                                    rs.getString("nasc") + "\t" +
+                                    rs.getString("telegram") + "\t" +
+                                    rs.getString("endereco") + "\t" +                        
+                                    rs.getString("obs"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

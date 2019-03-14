@@ -16,8 +16,8 @@ import database.*;
  * @author lmleo
  */
 public class Olguinha extends Application {
-    public static final String URL = "jdbc:sqlite:./database/test.db";
-    public static final String TABLE = "warehouses";
+    public static final String URL = "jdbc:sqlite:./database/test3.db";
+    public static final String TABLE = "pacientes222";
     
     @Override    
     public void start(Stage stage) throws Exception {
@@ -37,7 +37,7 @@ public class Olguinha extends Application {
         database.CreateDB.createNewDatabase();
         database.DBConnection.connect();
         database.CreateTable.createNewTable();
-        InsertDB app = new database.InsertDB();
+        
         launch(args);
 
     }

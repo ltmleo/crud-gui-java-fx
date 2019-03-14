@@ -32,13 +32,20 @@ public class InsertDB {
      * @param name
      * @param capacity
      */
-    public void insert(String name, double capacity) {
-        String sql = "INSERT INTO "+ olguinha.Olguinha.TABLE + " (name,capacity) VALUES(?,?)";
+    public void insert(String name, String cpf, String sexo, String tel, String nasc, String telegram, String endereco, String obs) {
+        String sql = "INSERT INTO "+ olguinha.Olguinha.TABLE + " (name,cpf,sexo,nasc,tel,telegram,endereco,obs) VALUES(?,?,?,?,?,?,?,?)";
  
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, name);
-            pstmt.setDouble(2, capacity);
+            pstmt.setString(2, cpf);
+            pstmt.setString(3, sexo);
+            pstmt.setString(4, nasc);
+            pstmt.setString(5, tel);
+            pstmt.setString(6, telegram);
+            pstmt.setString(7, endereco);
+            pstmt.setString(8, obs);
+                                                                                    
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
