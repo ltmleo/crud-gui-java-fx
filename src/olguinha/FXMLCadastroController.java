@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -21,14 +22,31 @@ import javafx.scene.control.Label;
  * @author lmleo
  */
 public class FXMLCadastroController implements Initializable {
-   
+    @FXML
+    private TextField txtNome;
+    @FXML
+    private TextField txtCpf;
+    @FXML
+    private TextField txtSexo;
+    @FXML
+    private TextField txtTel;
+    @FXML
+    private TextField txtNasc;
+    @FXML
+    private TextField txtTelegram;
+    @FXML
+    private TextField txtEndereco;
+    @FXML
+    private TextField txtObs;
+                                
     /**
      * Initializes the controller class.
      */
     @FXML
     private void clicouSalvar(ActionEvent event) {
+        //System.out.println(txtCpf.getText().toString());
         InsertDB app = new database.InsertDB();
-        app.insert("TEST", "OI2", "ola", "test", "eita", "coisa", "chata", "caceta");
+        app.insert(txtNome.getText(), txtCpf.getText(), txtSexo.getText(), txtTel.getText(), txtNasc.getText(), txtTelegram.getText(), txtEndereco.getText(), txtObs.getText());
 
         SelectApp app2 = new SelectApp();
         app2.selectAll();

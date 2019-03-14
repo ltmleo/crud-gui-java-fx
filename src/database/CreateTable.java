@@ -19,7 +19,7 @@ public class CreateTable {
    
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS "+olguinha.Olguinha.TABLE+" (\n"
-                + "	id text PRIMARY KEY,\n"
+                + "	id integer PRIMARY KEY,\n"
                 + "	name text NOT NULL,\n"
                 + "	cpf text NOT NULL UNIQUE,\n"
                 + "	sexo text NOT NULL,\n"
