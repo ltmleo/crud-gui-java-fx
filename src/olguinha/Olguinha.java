@@ -10,15 +10,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import database.*;
 /**
  *
  * @author lmleo
  */
 public class Olguinha extends Application {
+    public static final String URL = "jdbc:sqlite:./database/test.db";
     
-    @Override
+    @Override    
     public void start(Stage stage) throws Exception {
+               
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
@@ -31,7 +33,12 @@ public class Olguinha extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        database.CreateDB.createNewDatabase();
+        database.DBConnection.connect();
+        database.CreateTable.createNewTable();
+        InsertDB app = new database.InsertDB();
         launch(args);
+
     }
     
 }

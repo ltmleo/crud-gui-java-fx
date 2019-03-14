@@ -24,13 +24,6 @@ import javafx.stage.Stage;
  * @author lmleo
  */
 public class FXMLDocumentController implements Initializable {
-    
-    
-    
-    @FXML
-    private Button btnCadastrar;
-    private Label test;
-    
     @FXML
     private void abreJanela(String arquivoFXML){
         try {
