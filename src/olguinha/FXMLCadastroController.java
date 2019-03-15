@@ -44,7 +44,6 @@ public class FXMLCadastroController implements Initializable {
      */
     @FXML
     private void clicouSalvar(ActionEvent event) {
-        //System.out.println(txtCpf.getText().toString());
         InsertDB app = new database.InsertDB();
         app.insert(txtNome.getText(), txtCpf.getText(), txtSexo.getText(), txtTel.getText(), txtNasc.getText(), txtTelegram.getText(), txtEndereco.getText(), txtObs.getText());
 

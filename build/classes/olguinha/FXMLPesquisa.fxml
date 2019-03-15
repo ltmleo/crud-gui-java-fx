@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="olguinha.FXMLPesquisaController">
+   <children>
+      <Button fx:id="btnPesquisarTodos" layoutX="66.0" layoutY="26.0" mnemonicParsing="false" onAction="#clicouPesquisarTodos" text="Pesquisar Todos" />
+      <TableView fx:id="tableResults" layoutX="20.0" layoutY="70.0" prefHeight="512.0" prefWidth="870.0">
+        <columns>
+          <TableColumn fx:id="colunaID" prefWidth="50.0" text="id" />
+          <TableColumn fx:id="colunaNome" prefWidth="150.0" text="Nome" />
+        <TableColumn prefWidth="80.0" text="CPF" />
+        <TableColumn prefWidth="50.0" text="Sexo" />
+        <TableColumn prefWidth="80.0" text="Tel" />
+        <TableColumn prefWidth="60.0" text="Nasc" />
+        <TableColumn prefWidth="80.0" text="Telegram" />
+        <TableColumn prefWidth="100.0" text="Endereço" />
+        <TableColumn prefWidth="220.0" text="Obs" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

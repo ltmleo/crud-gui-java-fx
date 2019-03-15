@@ -38,8 +38,12 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void clicouBotao(ActionEvent event) {
+    private void clicouCadastrar(ActionEvent event) {
         abreJanela("FXMLCadastro.fxml");
+    }
+    @FXML
+    private void clicouPesquisar(ActionEvent event) {
+        abreJanela("FXMLPesquisa.fxml");
     }
     
     @Override

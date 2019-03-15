@@ -15,12 +15,12 @@
             <Image url="@../images/flores.jpg" />
          </image>
       </ImageView>
-      <Button id="btnCadastrar" fx:id="btnCadastrar" layoutX="24.0" layoutY="176.0" mnemonicParsing="false" onAction="#clicouBotao" prefHeight="44.0" prefWidth="220.0" text="Novo Paciente">
+      <Button id="btnCadastrar" fx:id="btnCadastrar" layoutX="24.0" layoutY="176.0" mnemonicParsing="false" onAction="#clicouCadastrar" prefHeight="44.0" prefWidth="220.0" text="Novo Paciente">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="24.0" layoutY="234.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="220.0" text="Pesquisar">
+      <Button fx:id="btnPesquisar" layoutX="24.0" layoutY="234.0" mnemonicParsing="false" onAction="#clicouPesquisar" prefHeight="44.0" prefWidth="220.0" text="Pesquisar">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

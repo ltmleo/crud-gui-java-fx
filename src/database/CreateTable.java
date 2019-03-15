@@ -29,7 +29,6 @@ public class CreateTable {
                 + "	endereco text NOT NULL,\n"
                 + "	obs text \n"
                 + ");";
-        System.out.println(sql);
         try (Connection conn = DriverManager.getConnection(olguinha.Olguinha.URL);
                 Statement stmt = conn.createStatement()) {
             // create a new table

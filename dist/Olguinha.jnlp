@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Olguinha.jar" size="40744" download="eager" />
+    <jar href="Olguinha.jar" size="41702" download="eager" />
     <jar href="lib/sqlite-jdbc-3.23.1.jar" size="6733696" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="olguinha.Olguinha"  name="Olguinha" />
