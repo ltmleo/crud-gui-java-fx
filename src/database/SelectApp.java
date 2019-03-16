@@ -5,12 +5,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javafx.collections.ObservableList;
+import olguinha.UserDetail;
+
  
 /**
  *
  * @author sqlitetutorial.net
  */
 public class SelectApp {
+   
+
  
     /**
      * Connect to the test.db database
@@ -54,7 +59,7 @@ public class SelectApp {
             System.out.println(e.getMessage());
         }
     }
-    
+     
    
     /**
      * @param args the command line arguments

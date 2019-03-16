@@ -16,8 +16,8 @@ import database.*;
  * @author lmleo
  */
 public class Olguinha extends Application {
-    public static final String URL = "jdbc:sqlite:./database/test3.db";
-    public static final String TABLE = "pacientes777";
+    public static final String URL = "jdbc:sqlite:./database/test4.db";
+    public static final String TABLE = "pacientes1000";
     
     @Override    
     public void start(Stage stage) throws Exception {

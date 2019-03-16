@@ -14,13 +14,13 @@
         <columns>
           <TableColumn fx:id="colunaID" prefWidth="50.0" text="id" />
           <TableColumn fx:id="colunaNome" prefWidth="150.0" text="Nome" />
-        <TableColumn prefWidth="80.0" text="CPF" />
-        <TableColumn prefWidth="50.0" text="Sexo" />
-        <TableColumn prefWidth="80.0" text="Tel" />
-        <TableColumn prefWidth="60.0" text="Nasc" />
-        <TableColumn prefWidth="80.0" text="Telegram" />
-        <TableColumn prefWidth="100.0" text="Endereço" />
-        <TableColumn prefWidth="220.0" text="Obs" />
+        <TableColumn fx:id="colunaCpf" prefWidth="80.0" text="CPF" />
+        <TableColumn fx:id="colunaSexo" prefWidth="50.0" text="Sexo" />
+        <TableColumn fx:id="colunaTel" prefWidth="80.0" text="Tel" />
+        <TableColumn fx:id="colunaNasc" prefWidth="60.0" text="Nasc" />
+        <TableColumn fx:id="colunaTelegram" prefWidth="80.0" text="Telegram" />
+        <TableColumn fx:id="colunaEndereco" prefWidth="100.0" text="Endereço" />
+        <TableColumn fx:id="colunaObs" prefWidth="220.0" text="Obs" />
         </columns>
       </TableView>
    </children>
