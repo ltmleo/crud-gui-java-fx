@@ -19,8 +19,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -29,9 +31,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author lmleo
  */
 public class FXMLPesquisaController implements Initializable {
-
+    
+    
     @FXML
     private Button btnPesquisarTodos;
+    @FXML
+    private Button btnPesquisar;
+    @FXML
+    private TextArea txtPesquisa;
+    
     @FXML
     private TableView<UserDetail> tableResults;
     @FXML
@@ -52,19 +60,51 @@ public class FXMLPesquisaController implements Initializable {
     private TableColumn<UserDetail, String> colunaEndereco;
     @FXML
     private TableColumn<UserDetail, String> colunaObs;
-
-    private ObservableList<UserDetail>data;
- 
+    
+    @FXML
+    private ChoiceBox<String> cbOps;
+    
+    ObservableList list = FXCollections.observableArrayList();    
+    private ObservableList<UserDetail>data;   
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        LoadData();
     }    
 
     @FXML
     private void clicouPesquisarTodos(ActionEvent event) {
-        data = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM "+olguinha.Olguinha.TABLE;
+        PesqisaDB("");
+        
+          }
+    @FXML
+    private void clicouPesquisar(ActionEvent event) {
+        String target = txtPesquisa.getText().toLowerCase().replaceAll("\\s","");;
+        String sqlPesquisa ="WHERE "+ cbOps.getValue() + "='" + target +"'";
+        PesqisaDB(sqlPesquisa);
+        txtPesquisa.setText(null);
+    }
+    
+    private void LoadData() {
+        list.removeAll(list);
+        String a = "id";
+        String b = "name";
+        String c = "cpf";
+        String d = "sexo";
+        String e = "tel";
+        String f = "nasc";
+        String g = "telegram";
+        String h = "endereco";
+        String i = "obs";
+        list.addAll(a,b,c,d,e,f,g,h,i);
+        cbOps.getItems().addAll(list);
+        cbOps.setValue(b);
+
+    }
+    
+    private void PesqisaDB(String where){
+          data = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM "+olguinha.Olguinha.TABLE+" "+where ;
         
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
@@ -90,6 +130,7 @@ public class FXMLPesquisaController implements Initializable {
         tableResults.setItems(null);
         tableResults.setItems(data);
         
+
     }
     
     private Connection connect() {
@@ -102,6 +143,6 @@ public class FXMLPesquisaController implements Initializable {
         }
         return conn;
     }
-    
+
 
 }

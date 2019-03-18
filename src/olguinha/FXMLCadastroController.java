@@ -38,6 +38,8 @@ public class FXMLCadastroController implements Initializable {
     private TextField txtEndereco;
     @FXML
     private TextField txtObs;
+    @FXML
+    private Label lblSalvo;
                                 
     /**
      * Initializes the controller class.
@@ -46,9 +48,16 @@ public class FXMLCadastroController implements Initializable {
     private void clicouSalvar(ActionEvent event) {
         InsertDB app = new database.InsertDB();
         app.insert(txtNome.getText(), txtCpf.getText(), txtSexo.getText(), txtTel.getText(), txtNasc.getText(), txtTelegram.getText(), txtEndereco.getText(), txtObs.getText());
-
-        SelectApp app2 = new SelectApp();
-        app2.selectAll();
+        
+        txtNome.setText(null);
+        txtCpf.setText(null);
+        txtSexo.setText(null);
+        txtTel.setText(null);
+        txtNasc.setText(null);
+        txtTelegram.setText(null);
+        txtEndereco.setText(null);
+        txtObs.setText(null);
+        lblSalvo.setVisible(true);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
