@@ -6,13 +6,14 @@
 package olguinha;
 
 import database.InsertDB;
-import database.SelectApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -27,11 +28,7 @@ public class FXMLCadastroController implements Initializable {
     @FXML
     private TextField txtCpf;
     @FXML
-    private TextField txtSexo;
-    @FXML
     private TextField txtTel;
-    @FXML
-    private TextField txtNasc;
     @FXML
     private TextField txtTelegram;
     @FXML
@@ -40,28 +37,72 @@ public class FXMLCadastroController implements Initializable {
     private TextField txtObs;
     @FXML
     private Label lblSalvo;
+    @FXML
+    private Button btnSalvar;
+    @FXML
+    private CheckBox cbSexoMasculino;
+    @FXML
+    private CheckBox cbSexoFeminino;
+    @FXML
+    private CheckBox cbSexoOutro;
+    @FXML
+    private DatePicker dpNasc;
+    
+    String sexo;
+
                                 
     /**
      * Initializes the controller class.
      */
     @FXML
     private void clicouSalvar(ActionEvent event) {
+        System.out.println();
+        if (txtNome.getText().isEmpty() || txtCpf.getText().isEmpty() || sexo.isEmpty()) {
+            lblSalvo.setText("Os campos Nome, CPF e Sexo \n são obrigatorios");
+            lblSalvo.setVisible(true);
+        }
+        else {
         InsertDB app = new database.InsertDB();
-        app.insert(txtNome.getText(), txtCpf.getText(), txtSexo.getText(), txtTel.getText(), txtNasc.getText(), txtTelegram.getText(), txtEndereco.getText(), txtObs.getText());
+        app.insert(txtNome.getText(), txtCpf.getText(), sexo, txtTel.getText(), dpNasc.getValue().toString(), txtTelegram.getText(), txtEndereco.getText(), txtObs.getText());
         
         txtNome.setText(null);
         txtCpf.setText(null);
-        txtSexo.setText(null);
+        cbSexoFeminino.setSelected(false);
+        cbSexoMasculino.setSelected(false);
+        cbSexoOutro.setSelected(false);
         txtTel.setText(null);
-        txtNasc.setText(null);
+        dpNasc.setValue(null);
         txtTelegram.setText(null);
         txtEndereco.setText(null);
         txtObs.setText(null);
         lblSalvo.setVisible(true);
+        }
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void ClicouSexoMasculino(ActionEvent event) {
+        cbSexoFeminino.setSelected(false);
+        cbSexoOutro.setSelected(false);
+        sexo="M";
+    }
+
+    @FXML
+    private void clicouSexoFeminino(ActionEvent event) {
+        cbSexoMasculino.setSelected(false);
+        cbSexoOutro.setSelected(false);
+        sexo="F";
+    }
+
+    @FXML
+    private void clicouSexoOutro(ActionEvent event) {
+        cbSexoMasculino.setSelected(false);
+        cbSexoFeminino.setSelected(false);
+        sexo="O";
+    }
     
 }

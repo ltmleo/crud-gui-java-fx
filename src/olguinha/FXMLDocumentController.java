@@ -18,10 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 /**
  *
- * @author lmleo
+ * @author ltmleo
  */
 public class FXMLDocumentController implements Initializable {
 

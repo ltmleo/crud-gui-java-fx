@@ -27,9 +27,7 @@
       </Label>
       <TextField id="txtNome" fx:id="txtNome" layoutX="173.0" layoutY="91.0" onAction="#clicouSalvar" prefHeight="33.0" prefWidth="493.0" />
       <TextField id="txtCPF" fx:id="txtCpf" layoutX="173.0" layoutY="138.0" onAction="#clicouSalvar" prefHeight="33.0" prefWidth="493.0" />
-      <TextField id="txtRG" fx:id="txtSexo" layoutX="173.0" layoutY="184.0" onAction="#clicouSalvar" prefHeight="33.0" prefWidth="493.0" />
       <TextField id="txtTelefone" fx:id="txtTel" layoutX="173.0" layoutY="233.0" onAction="#clicouSalvar" prefHeight="33.0" prefWidth="493.0" />
-      <TextField id="txtTelefone" fx:id="txtNasc" layoutX="173.0" layoutY="283.0" onAction="#clicouSalvar" prefHeight="33.0" prefWidth="493.0" />
       <Label layoutX="76.0" layoutY="234.0" text="Tel:">
          <font>
             <Font size="27.0" />
@@ -69,6 +67,10 @@
          </font>
       </Button>
       <Label fx:id="lblSalvo" layoutX="856.0" layoutY="260.0" text="SALVO" visible="false" />
+      <CheckBox fx:id="cbSexoMasculino" layoutX="173.0" layoutY="193.0" mnemonicParsing="false" onAction="#ClicouSexoMasculino" text="Masculino" />
+      <CheckBox fx:id="cbSexoFeminino" layoutX="282.0" layoutY="193.0" mnemonicParsing="false" onAction="#clicouSexoFeminino" text="Feminino" />
+      <CheckBox fx:id="cbSexoOutro" layoutX="387.0" layoutY="193.0" mnemonicParsing="false" onAction="#clicouSexoOutro" text="Outro" />
+      <DatePicker fx:id="dpNasc" layoutX="173.0" layoutY="287.0" />
    </children>
    <opaqueInsets>
       <Insets />

@@ -14,11 +14,12 @@ public class CreateTable {
     /**
      * Create a new table in the test database
      *
+     * @param table
      */
-    public static void createNewTable() {
+    public static void createNewTable(String table) {
    
         // SQL statement for creating a new table
-        String sql = "CREATE TABLE IF NOT EXISTS "+olguinha.Olguinha.TABLE+" (\n"
+        String sql = "CREATE TABLE IF NOT EXISTS "+table+" (\n"
                 + "	id integer PRIMARY KEY,\n"
                 + "	name text NOT NULL,\n"
                 + "	cpf text NOT NULL UNIQUE,\n"

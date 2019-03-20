@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import database.*;
 /**
  *
  * @author lmleo
@@ -36,7 +35,8 @@ public class Olguinha extends Application {
     public static void main(String[] args) {
         database.CreateDB.createNewDatabase();
         database.DBConnection.connect();
-        database.CreateTable.createNewTable();
+        database.CreateTable.createNewTable("pacientes1000");
+        database.CreateTable.createNewTable("consultas1000");
         
         launch(args);
 
