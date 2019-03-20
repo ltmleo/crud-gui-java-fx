@@ -24,8 +24,16 @@ import javafx.stage.Stage;
  * @author lmleo
  */
 public class FXMLDocumentController implements Initializable {
+
     @FXML
-    private void abreJanela(String arquivoFXML){
+    private Button btnCadastrar;
+    @FXML
+    private Button btnPesquisar;
+    @FXML
+    private Button btnMenssagem;
+    @FXML
+    private Label test;
+    public void abreJanela(String arquivoFXML){
         try {
            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(arquivoFXML));
            Parent root1 = (Parent) fxmlLoader.load();
@@ -45,9 +53,19 @@ public class FXMLDocumentController implements Initializable {
     private void clicouPesquisar(ActionEvent event) {
         abreJanela("FXMLPesquisa.fxml");
     }
+    @FXML
+    private void clicouAgendar(ActionEvent event) {
+        abreJanela("FXMLAgendar.fxml");
+    }
+    
+    @FXML
+    private void clicouMenssagem(ActionEvent event) {
+        System.out.println("Em Desenvolvimento");
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
 }

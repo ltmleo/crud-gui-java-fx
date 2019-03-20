@@ -7,10 +7,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="olguinha.FXMLPesquisaController">
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="936.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="olguinha.FXMLPesquisaController">
    <children>
       <Button fx:id="btnPesquisarTodos" layoutX="766.0" layoutY="23.0" mnemonicParsing="false" onAction="#clicouPesquisarTodos" text="Pesquisar Todos" />
-      <TableView fx:id="tableResults" layoutX="20.0" layoutY="70.0" prefHeight="512.0" prefWidth="870.0">
+      <TableView fx:id="tableResults" layoutX="20.0" layoutY="70.0" onMouseClicked="#clicouMouse" prefHeight="512.0" prefWidth="870.0">
         <columns>
           <TableColumn fx:id="colunaID" prefWidth="50.0" text="id" />
           <TableColumn fx:id="colunaNome" prefWidth="150.0" text="Nome" />
@@ -26,5 +26,16 @@
       <ChoiceBox fx:id="cbOps" layoutX="20.0" layoutY="23.0" prefHeight="25.0" prefWidth="169.0" />
       <TextArea fx:id="txtPesquisa" layoutX="219.0" layoutY="23.0" prefHeight="25.0" prefWidth="401.0" />
       <Button fx:id="btnPesquisar" layoutX="658.0" layoutY="23.0" mnemonicParsing="false" onAction="#clicouPesquisar" text="Pesquisar" />
+      <Label layoutX="20.0" layoutY="606.0" text="Deseja agendar uma consulta para ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="usuarioSelecionado" layoutX="290.0" layoutY="607.0" text="usuarioSelecionado" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAgendar" layoutX="817.0" layoutY="603.0" mnemonicParsing="false" onAction="#clicouAgendar" text="Agendar" />
    </children>
 </AnchorPane>

@@ -37,14 +37,14 @@ public class InsertDB {
  
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, name.toLowerCase());
-            pstmt.setString(2, cpf.toLowerCase());
-            pstmt.setString(3, sexo.toLowerCase());
-            pstmt.setString(4, nasc.toLowerCase());
-            pstmt.setString(5, tel.toLowerCase());
-            pstmt.setString(6, telegram.toLowerCase());
-            pstmt.setString(7, endereco.toLowerCase());
-            pstmt.setString(8, obs.toLowerCase());
+            pstmt.setString(1, name.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(2, cpf.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(3, sexo.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(4, nasc.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(5, tel.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(6, telegram.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(7, endereco.toLowerCase().replaceAll("\\s",""));
+            pstmt.setString(8, obs.toLowerCase().replaceAll("\\s",""));
                                                                                     
             pstmt.executeUpdate();
         } catch (SQLException e) {

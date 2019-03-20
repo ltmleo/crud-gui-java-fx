@@ -20,10 +20,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -38,7 +42,11 @@ public class FXMLPesquisaController implements Initializable {
     @FXML
     private Button btnPesquisar;
     @FXML
+    private Button btnAgendar;
+    @FXML
     private TextArea txtPesquisa;
+    @FXML
+    private Label usuarioSelecionado;
     
     @FXML
     private TableView<UserDetail> tableResults;
@@ -66,6 +74,8 @@ public class FXMLPesquisaController implements Initializable {
     
     ObservableList list = FXCollections.observableArrayList();    
     private ObservableList<UserDetail>data;   
+
+
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -79,10 +89,24 @@ public class FXMLPesquisaController implements Initializable {
           }
     @FXML
     private void clicouPesquisar(ActionEvent event) {
-        String target = txtPesquisa.getText().toLowerCase().replaceAll("\\s","");;
+        String target = txtPesquisa.getText().toLowerCase().replaceAll("\\s","");
         String sqlPesquisa ="WHERE "+ cbOps.getValue() + "='" + target +"'";
         PesqisaDB(sqlPesquisa);
         txtPesquisa.setText(null);
+    }
+    
+    @FXML
+    private void clicouMouse(MouseEvent event) {
+    UserDetail person = tableResults.getSelectionModel().getSelectedItem();
+    
+    usuarioSelecionado.setText(person.getName()+"?");
+    usuarioSelecionado.setVisible(true);
+    }
+    
+    @FXML
+    private void clicouAgendar(ActionEvent event) {
+        FXMLDocumentController pesquisa = new FXMLDocumentController();
+        pesquisa.abreJanela("FXMLAgendar.fxml");
     }
     
     private void LoadData() {
